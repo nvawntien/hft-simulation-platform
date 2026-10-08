@@ -2,6 +2,8 @@
 
 Add source-traced Business scenarios and open-gap review
 
+**Unselected planning alternative.** The owner approved one combined Draft PR on `review/business-v2-draft`. Existing baseline/V2 commits are `f97b8d4cb72fe722bf6e8bf57fd032dda025f5ce` and `f54bfdd4e11ebc93a0efe4e2221fadf250273091`. No Phase A/B split was reconstructed or authorized for publication. The conditional text below remains a planning alternative, not the current branch/PR route. See [the current commit/publication record](commit-plan.md).
+
 ## Conditional PR description — not publishable yet
 
 **PLANNING ONLY — no Phase B branch exists.** Requires a verified Phase A branch and authorization for reconstruction. Preserve the complete current V2 bytes as the intended endpoint; do not revise policy while factoring the phases.

@@ -1,13 +1,17 @@
 # Validation evidence for GitHub review preparation
 
-**DRAFT — REQUIRES TEAM / OWNER REVIEW. NOT PUBLISHED.**
+**DRAFT — REQUIRES TEAM / OWNER REVIEW.**
 
-## Fresh inspection results
+## Verification checkpoint for authorized publication
+
+Updated on 2026-10-08 before the metadata commit and authorized push/Draft PR creation. Earlier preparation-only Git state is superseded by this checkpoint. Publication of the five Issues, merge and Ready for Review remain unauthorized. This evidence does not record owner approval of Business V2.
 
 | Check | Current result |
 |-------|----------------|
-| Git base | `4d64533a25592a62e597e701dfdfd84daf5724ad`; only LICENSE is tracked |
-| Existing uncommitted work | 36 untracked files; no tracked/staged changes at inspection |
+| Git base | Refreshed over origin SSH: main/origin/main `4d64533a25592a62e597e701dfdfd84daf5724ad`; base contains only LICENSE |
+| Review branch | `review/business-v2-draft` in `/tmp/hft-business-v2-github`; clean before metadata edits; main is an ancestor |
+| Existing commits | Baseline `f97b8d4cb72fe722bf6e8bf57fd032dda025f5ce`, complete V2 `f54bfdd4e11ebc93a0efe4e2221fadf250273091`; retained unchanged |
+| Original workspace | Still main, no tracked/staged changes; all 47 original untracked files remain byte-identical |
 | Source fidelity | All 35 numbered English source sections and exact 26 BR rows reconstructed after removing only generated ID links/anchors; moved §1 Vietnamese link target normalized for comparison |
 | Historical recovery | English/Vietnamese frozen source hashes match the recorded originals |
 | Requirements preservation | Both current hashes match their recorded pre-V2 values; files remain unedited |
@@ -16,12 +20,13 @@
 | Scenarios | 68: four narrow APPROVED-DERIVED, 55 PROVISIONAL, nine OPEN / BLOCKED; no approved-derived trace uses proposed OQ/BR |
 | Gaps | 18 OPEN: four BLOCKER, eleven HIGH, three MEDIUM |
 | Original adapter headings | All 35 exact numbered English and Vietnamese headings retained |
-| Internal links before new bundle | 5,537 relative file/anchor references checked across Business, Requirements and AGENTS; only the two known legacy PDF failures below |
-| Tables / whitespace | 196 Business tables checked for columns; new/untracked document whitespace/fences checked directly rather than relying on git diff |
-| Mermaid structure | 17 closed Mermaid blocks: ten flowcharts, six sequence diagrams, one state diagram; parser/rendering not freshly rerun |
+| Relative links / Markdown | Updated metadata check covered 5,559 relative links and 203 tables; no new failures, only the two known legacy PDF references |
+| Whitespace / scope | Both original commit diffs and metadata diff pass git diff --check; only six metadata files differ, all other tracked file hashes match commit 2 |
+| Mermaid | 17/17 blocks passed fresh Mermaid 12.1.0 parsing: ten flowcharts, six sequence diagrams, one state diagram; no GitHub visual-rendering claim |
+| Authentication / remote | GitHub CLI and origin SSH fetch succeeded; origin URL unchanged; no review branch or matching PR existed at this checkpoint |
 | Naive marker-only Phase A preview | Seven dangling README links/anchors; preview exists only in temporary analysis, not the working tree or a branch |
 
-Fresh source fidelity preserves all original formulas, numeric constraints, examples, meanings and approval bases as text. Semantic correctness and complete behavioral coverage are not proven by these automated checks. The original migration report records prior 88 decimal assertions and Mermaid parsing; its temporary scripts/checkpoint are no longer present, so those executions are not claimed as rerun in this preparation.
+Source fidelity preserves all original formulas, numeric constraints, examples, meanings and approval bases as text. Semantic correctness and complete behavioral coverage are not proven by these automated checks. The migration report's 88 decimal assertions remain historical evidence; this metadata-only update does not claim to rerun that arithmetic suite. The authorized local-commit run did rerun structural/fidelity and Mermaid syntax checks. Publication checks repeat them and prove that every non-metadata blob remains identical to commit 2.
 
 ## Known link discrepancies
 
@@ -40,7 +45,9 @@ The marker-only Phase A preview fails on: scenario index (referenced twice), dia
 
 ## Preservation inventory
 
-All paths below existed before this task. The final preparation check compares every current file against this manifest. Eleven additional review-draft files are the only intended working-tree additions. Current original files, branch, HEAD and index are retained; no stash/reset/checkout or commit is used to force separation. The temporary analysis snapshot is an additional convenience, not the sole preserved source and not promised as durable storage.
+The following 36-path inventory records the original review-preparation checkpoint, before eleven GitHub review-draft files were added. All 47 files now present in the original workspace remain untouched. Their full preservation manifest was captured before local commit creation and is checked again during publication. Work takes place in a separate worktree; no stash/reset/checkout is used to force an A/B split. Git commits and both frozen history files now preserve the original source durably; temporary manifests are supplementary evidence.
+
+Eight copied adapter/scenario files had one extra final LF removed before commit 2, while their original untracked files retained the hashes below. Thus the inventory identifies the original workspace, not a claim that all final committed copies have identical EOF bytes. The metadata-only follow-up may change only the six publication files listed in [the commit record](commit-plan.md#metadata-only-follow-up).
 
 | Pre-existing uncommitted path | SHA-256 before preparation |
 |-------------------------------|---------------------------|
@@ -85,14 +92,14 @@ All paths below existed before this task. The final preparation check compares e
 
 Repository inspection used `git status --short --untracked-files=all`, `git ls-tree -r --name-only HEAD`, branch/log reads, all document text and SHA-256 comparison. Source checks use the README's 35-section map and canonical BR anchors, stripping generated link wrappers/anchors before exact text comparison. Status checks parse decision/rule table cells, rather than lifecycle terms such as REJECTED. Link checks resolve relative files, explicit ID anchors and generated Markdown heading anchors. Scenario/gap checks use canonical anchors and exact trace/status fields.
 
-The disposable preview only removes Phase B-only files and cuts at explicit Phase B markers; its seven failures demonstrate why simply staging marker-based extraction is insufficient. It does not choose new policy or mutate live documents. Current cached origin/main is not proof of the live GitHub tip; publication needs a fetch/reassessment.
+The historical disposable preview only removed Phase B-only files and cut at explicit Phase B markers; its seven failures explain why the owner selected the combined route. It did not choose new policy or mutate live documents. Origin was refreshed over SSH for this publication checkpoint; verify remote heads again before pushing and stop on divergence.
 
-Final bundle link/table/whitespace/preservation checks and Git status are recorded after writing the draft bodies. Human review, actual reviewer assignment, local commits and all external publication remain outstanding.
+Local baseline/V2 commits are complete. Human semantic review and team reviewer assignment remain outstanding. Only the metadata follow-up, normal review-branch push and one Draft PR are authorized now; Issue publication, merge and Ready for Review are not. The live GitHub PR and final execution report record the external result after this pre-publication checkpoint.
 
-## Final preparation verification
+## Local-commit verification and publication checks
 
-- All 36 pre-existing files match the preservation inventory; only eleven new Markdown review artifacts were added.
-- All current relative file/anchor references pass except the two explicitly recorded legacy PDF references. After adding the bundle, 5,552 internal references and 202 Business/review tables were checked.
+- All 47 original untracked files remain preserved. Commit 1 contains the five exact baseline blobs; Business originals in that commit equal both history blobs in commit 2. Requirements/AGENTS have no diff after baseline.
+- Publication checks covered 5,559 internal references and 203 Business/review tables, with only the two explicitly recorded legacy PDF references failing. The earlier local-commit run covered 5,552 references and 202 tables; additional metadata navigation/table content explains the new counts.
 - Canonical counts and scenario approval inheritance remain unchanged; every Issue draft has explicit reviewers, scope, source trace, deliverables, acceptance and closure evidence.
-- HEAD remains `4d64533a25592a62e597e701dfdfd84daf5724ad` on main; the index is empty and no other branch was created. `git diff --check` passes, supplemented by direct untracked Markdown checks.
+- Original workspace HEAD remains `4d64533a25592a62e597e701dfdfd84daf5724ad` on main with an empty index. Review worktree HEAD at the start of this update is `f54bfdd4e11ebc93a0efe4e2221fadf250273091`; the third commit changes only publication metadata. Verify both existing hashes and all other blobs before push.
 - Existing linked BS/GAP headings no longer match the README's plain-ID heading search patterns. Corrected review queries are supplied in this bundle's README; the original source remains untouched. This is a navigation follow-up, not a new business gap.

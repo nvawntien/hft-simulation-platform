@@ -1,40 +1,47 @@
-Business documentation is currently absent from the tracked repository, and the working V2 draft combines migrated source with new behavioral analysis. Record the existing documentation baseline unchanged, then publish the complete modular working draft so six developers can review source fidelity separately from scenario interpretations and unresolved business decisions.
+This PR records the existing documentation baseline and organizes Business V2 into domain modules, canonical registers, source-traced scenarios and a review bundle. The six-person team can review migrated source separately from behavioral analysis and unresolved policy. The complete draft stays in one PR because a marker-only Phase A extraction required unsafe reconstruction and left seven dangling links in its disposable preview.
 
-**DRAFT — REQUIRES TEAM / OWNER REVIEW.** Documentation review/merge does not approve business policy. OQ-001 through OQ-014 remain APPROVED; OQ-015 through OQ-046 remain PROPOSED — OWNER REVIEW REQUIRED. Preserve all 26 BRs and 19 invariants.
+**DRAFT — REQUIRES TEAM / OWNER REVIEW. Business V2 is not approved.** Publishing, reviewing or merging documentation does not approve business policy. OQ-001 through OQ-014 remain APPROVED; OQ-015 through OQ-046 remain PROPOSED — OWNER REVIEW REQUIRED. All 46 OQ, 26 BR and 19 invariant IDs are preserved. All 18 gaps remain OPEN.
 
-### Proposed commits and impacted files
+### Commits and impacted files
 
-1. **Record existing documentation baseline**: `AGENTS.md`, original English/Vietnamese Business at `docs/BUSINESS.md` / `docs/BUSINESS.vi.md`, and existing `docs/REQUIREMENTS.md` / `docs/REQUIREMENTS.vi.md`. Business originals come from the verified frozen sources. Requirements and AGENTS are imported byte-for-byte; no requirement wording/status is edited. Tracking these existing files needs explicit authorization because current main contains only LICENSE.
-2. **Prepare modular Business V2 review draft**: replace the two Business paths with the existing navigation adapters; add the 31 existing files under `docs/business/` and the eleven GitHub review-preparation files under `docs/business/review/github/`. Requirements and AGENTS have no changes in this commit.
+1. **Record existing documentation baseline** — `f97b8d4cb72fe722bf6e8bf57fd032dda025f5ce`: add `AGENTS.md`, original English/Vietnamese Business at `docs/BUSINESS.md` / `docs/BUSINESS.vi.md`, and existing `docs/REQUIREMENTS.md` / `docs/REQUIREMENTS.vi.md`, byte-for-byte. This records provenance; no requirement wording or status changes.
+2. **Prepare modular Business V2 review draft** — `f54bfdd4e11ebc93a0efe4e2221fadf250273091`: update the two Business entry points and add 42 files under `docs/business/`, including 31 V2 files and eleven GitHub review-preparation files. Requirements and AGENTS have no changes in this commit. Eight copied adapter/scenario files lose only one extra final blank line; the original workspace is untouched.
+3. **Update GitHub review publication metadata** — separate follow-up touching only six metadata files under `docs/business/review/github/`. The two earlier commits retain their hashes. Business rules, scenarios, diagrams, histories, Requirements, approval statuses and the 18 OPEN gaps are unchanged from commit 2.
 
-Domain files are `01-scope-actors.md`, `02-experiment.md`, `03-markets-assets.md`, `04-orders.md`, `05-matching-stp.md`, `06-balance-reservation.md`, `07-trade-settlement-fees.md`, `08-market-data.md`, `09-portfolio-pnl.md`, `10-algo-hft.md`, and `11-administration.md`. Supporting files are Business README/registers/glossary, seven scenario groups plus scenario index, diagram catalogue, four existing review files, and three history files. The preparation index lists the new PR/Issue bodies and approval plan.
+Domains cover scope/actors, experiments, markets/assets, orders, matching/STP, balance/reservation, settlement/fees, market data, portfolio/PnL, Algo/HFT and administration. Supporting files include navigation, decisions/invariants/glossary, eight scenario/index files, the diagram catalogue, gap/coverage/review documents, exact historical sources and local PR/Issue drafts. No application, Architecture or infrastructure decision is introduced.
 
-### Two review passes
+### Round 1 — Source fidelity, preserved IDs, approval boundaries and historical sources
 
-**Pass A — migration:** compare all 35 original sections and canonical BR/register rows against `docs/business/history/BUSINESS.md`; check Vietnamese history, exact financial formulas/numbers, statuses, original headings and source links. Review the authority/language migration as an editorial change; do not infer new translation parity.
+Compare all 35 numbered original sections and canonical rule/register rows against `docs/business/history/BUSINESS.md` and the original Business in commit 1. Check Vietnamese history, exact financial formulas/numeric constraints/examples, source dependencies and original headings/links. Review the English canonical / partial Vietnamese editorial policy without assuming translation parity.
 
-**Pass B — behavioral analysis:** inspect each domain's Phase B section, 68 BS cases, 17 Mermaid diagrams, 13 branch/transition tables, coverage matrix and 18 OPEN gaps. Require exact dependencies and clear approved/proposed/undefined layers. Four approved-derived cases are deliberately narrow; 55 complete scenarios are provisional and nine are blocked. Thirty-minute and one-hour examples do not authorize duration defaults or termination policies.
+- [ ] Baseline Business, Requirements and AGENTS bytes match their designated original sources; both history files equal the Business originals in commit 1.
+- [ ] All 46 OQ, 26 BR and 19 invariant IDs, original meanings, formulas, numbers and approval bases are preserved.
+- [ ] OQ-001–OQ-014 remain APPROVED and OQ-015–OQ-046 remain PROPOSED — OWNER REVIEW REQUIRED; no new approval is inferred.
+- [ ] Each rule/decision has one canonical entry; entry points, numbered headings and relative source links remain navigable.
+- [ ] Migrated source and new analysis are visibly distinguishable; historical review records are not current owner approval.
+- [ ] Requirements/AGENTS have no content changes after baseline; both existing commit hashes remain unchanged.
 
-### Validation and limitations
+### Round 2 — Scenarios, decision tables, Mermaid diagrams, business gaps and semantic consistency
 
-Fresh verification preserves source/Requirements hashes, reconstructs all 35 source sections and 26 BR rows, checks 46 OQ and 19 invariant entries, canonical ID uniqueness, scenario approval inheritance, original adapter headings, Markdown tables/fences/whitespace and internal link targets. Two pre-existing PDF links remain broken in unchanged Requirements. Current Mermaid checking verifies fences/types, not a newly executed renderer/parser; prior parsing/arithmetic evidence remains in the migration report. No application/runtime checks apply.
+Review domain Phase B analysis, 68 scenarios, 13 branch/transition tables, 17 Mermaid diagrams, the coverage matrix and 18 OPEN gaps. Four scenarios isolate narrow approved-derived behavior; 55 complete scenarios remain PROVISIONAL and nine are OPEN / BLOCKED. Any proposed dependency keeps a complete scenario provisional. Thirty-minute and one-hour probes do not establish supported defaults, clock progression or termination policy.
 
-The marker-only A/B preview had seven unresolved links; no unsafe split or phase-specific branch is included. Owner review is still needed for all proposed decisions and missing lifecycle, clock/end/tie, observation, identity, rejected-quantity and financial-policy boundaries.
+- [ ] Scenario preconditions, triggers, normal/alternative/invalid/no-action/time cases, effects and exact traces agree with source.
+- [ ] Invalid, terminal, foreign-object, repeated, partial/full and time-boundary outcomes are covered or linked to an OPEN gap.
+- [ ] Financial examples, reserves/releases, fee rounding, asset conservation, retained cost basis and exactly-once settlement reconcile.
+- [ ] Decision-table branches, scenario outcomes and Mermaid states/arrows agree; inspect visual rendering on GitHub.
+- [ ] Same-time ordering, experiment clock/end, latency/observation delivery and ownership ambiguities remain OPEN where no source selects a policy.
+- [ ] Hosted strategy/account and malformed rejected-quantity source tensions remain visible and unresolved.
+- [ ] Coverage describes meaningful actions/transitions, rather than claiming business completeness because IDs are listed.
+- [ ] Record findings through PR comments. The five domain-review Issue drafts are not posted; their publication awaits separate owner confirmation.
 
-### Human review checklist
+### Validation and remaining limitations
 
-- [ ] Commit 1 is an unchanged baseline import; compare original/Requirements hashes and confirm the tracking scope.
-- [ ] All 35 numbered source sections, 46 OQs, 26 BRs and 19 invariants retain their meaning/status/basis.
-- [ ] Every canonical definition has one stable entry; old paths/headings and internal source links are navigable.
-- [ ] Source prose and Phase B interpretation are distinguishable; no proposed dependency is promoted to approval.
-- [ ] Financial examples, rounding/residuals, conservation and one-time settlement reconcile.
-- [ ] Invalid, terminal, foreign-object, repeated, no-action, partial/full and time-boundary cases are covered or GAP-linked.
-- [ ] Diagrams and decision tables agree with scenario outcomes; check visual rendering on GitHub.
-- [ ] Hosted strategy/account and rejected-quantity tensions remain visible and unresolved.
-- [ ] English canonical / partial Vietnamese aid policy is accurately disclosed.
-- [ ] Review findings are recorded through the five domain-review Issues; closing/merging documentation does not approve OQs.
-- [ ] Requirements content, business policy and Architecture scope are unchanged by this PR.
+Source reconstruction preserves all 35 sections and 26 BR rows; canonical checks retain 46 OQ and 19 invariants. Original/history/Requirements hashes, scenario approval inheritance, source headings, 5,559 relative file/anchor links, 203 Markdown tables, fence structure and whitespace are checked. All 17 Mermaid blocks pass syntax parsing with Mermaid 12.1.0 installed only under `/tmp`; GitHub layout and semantic correctness still need human review. No application/runtime test applies. The migration report's earlier 88 decimal assertions are historical evidence and are not claimed as rerun for this metadata update.
 
-### Publication state
+There are **18 OPEN gaps: 4 BLOCKER, 11 HIGH and 3 MEDIUM**. Owner decisions are still needed for proposed OQs and unresolved experiment lifecycle/clock/end/ties, observation/latency, account/strategy identity, administration, rejected-quantity and setup funding behavior. This PR does not resolve them.
 
-Proposed head: `review/business-v2-draft`; base: `main` after confirming the remote base. This body is prepared locally; no branch/commit/PR/Issue is published and no merge is authorized. Actual reviewer handles, Issue links and PR number will be added only after supplied/created with explicit confirmation.
+Two pre-existing links in unchanged Requirements EN/VI point to the absent `docs/HFT-Simulation-Platform-Business-Specification-V1-Vietnamese.pdf`. They are reported and retained. English modules are canonical; V2 Vietnamese coverage is partial, and full sentence-by-sentence historical or V2 translation parity is not asserted. The preserved migration report describes its original preparation checkpoint; current commit/publication metadata is in `docs/business/review/github/`.
+
+### Publication boundary
+
+Head: `review/business-v2-draft`; base: `main`. Publish as **Draft** and keep that status. No merge, Ready for Review transition, Business decision approval, reviewer assignment or GitHub Issue publication is included. Reviewers remain proposed Member 1–6 roles until their GitHub usernames are supplied; current collaborator inspection returned only the PR author `nvawntien`.

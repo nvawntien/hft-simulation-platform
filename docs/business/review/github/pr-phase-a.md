@@ -2,6 +2,8 @@
 
 Migrate Business source into canonical domain modules
 
+**Unselected planning alternative.** The owner approved one combined Draft PR on `review/business-v2-draft`. Baseline commit `f97b8d4cb72fe722bf6e8bf57fd032dda025f5ce` and complete V2 commit `f54bfdd4e11ebc93a0efe4e2221fadf250273091` already exist on that branch and remain unchanged. No Phase A branch/tree was reconstructed; main still contains only LICENSE at the verified publication checkpoint. The conditional text below is preserved planning, not the current publication route. See [the current commit/publication record](commit-plan.md).
+
 ## Conditional PR description — not publishable yet
 
 **PLANNING ONLY — no verified Phase A branch exists.** Requires a separately authorized, unchanged documentation baseline in main and reconstruction of phase-specific README/links/metadata. A marker-only extraction has seven dangling links and must not be published as this PR. No new business behavior belongs in this phase.
